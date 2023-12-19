@@ -50,16 +50,11 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  const max = Number.MAX_VALUE;
-  if (value1 === max - 2 || value2 === max) {
-    return max - 1;
+  if (!Number.isFinite(value1) || !Number.isFinite(value2)) {
+    return NaN;
   }
-  if (value1 >= max || value2 >= -max / 2) {
-    return max / 4;
-  }
-  return (value1 + value2) / 2;
+  return value1 / 2 + value2 / 2;
 }
-
 /**
  * Returns a distance between two points by cartesian coordinates.
  *
